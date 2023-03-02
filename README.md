@@ -1,2 +1,3 @@
-# practicing_terraform
-Some codes to practice terraform and IaC
+# Practicing Terraform
+
+Creating some cool stuff and practicing the language.
