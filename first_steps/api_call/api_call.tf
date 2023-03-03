@@ -1,16 +1,12 @@
 /*
-    API Calls using Terraform and the Mastercard REST API Provider.
-    
-    For more info, see:
-    https://github.com/Mastercard/terraform-provider-restapi/tree/master/examples
+    API Calls using Terraform and the CURL Provider.
 */
-
 terraform {
 
   required_providers {
 
     curl = {
-      source = "anschoewe/curl"
+      source  = "anschoewe/curl"
       version = "1.0.2"
     }
 
@@ -22,7 +18,7 @@ terraform {
   }
   # About the Mastercard provider: https://registry.terraform.io/providers/Mastercard/restapi/latest/docs
 
-  required_version = ">= 1.3.9"
+  /* required_version = ">= 1.3.9" */
   # About versioning in Terraform: https://developer.hashicorp.com/terraform/tutorials/configuration-language/versions
 }
 
@@ -40,7 +36,7 @@ resource "random_string" "random" {
 
 data "curl" "shouldideploy" {
   http_method = "GET"
-  uri = "https://shouldideploy.today/api?tz=UTC"
+  uri         = "https://shouldideploy.today/api?tz=UTC"
 }
 
 locals {
@@ -52,5 +48,5 @@ output "api_response" {
 }
 
 output "random_number" {
-  value     = random_string.random.result
+  value = random_string.random.result
 }
